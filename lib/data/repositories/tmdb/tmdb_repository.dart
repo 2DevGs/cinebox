@@ -3,7 +3,6 @@ import '../../../domain/models/genre.dart';
 import '../../../domain/models/movie.dart';
 
 abstract interface class TmdbRepository {
-
   Future<Result<List<Movie>>> getPopularMovies({
     String language,
     int page,
@@ -26,4 +25,5 @@ abstract interface class TmdbRepository {
 
   Future<Result<List<Genre>>> getGenres();
 
+  Future<Result<List<Movie>>> getMoviesByGenres({required int genreId});
 }

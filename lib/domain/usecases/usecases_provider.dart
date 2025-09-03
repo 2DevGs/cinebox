@@ -2,6 +2,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../data/repositories/repositories_providers.dart';
 import 'get_movies_by_category_usecase.dart';
+import 'get_movies_by_genre_usecase.dart';
 
 part 'usecases_provider.g.dart';
 
@@ -11,3 +12,7 @@ GetMoviesByCategoryUsecase getMoviesByCategoryUsecase(Ref ref) {
     tmdbRepository: ref.read(tmdbRepositoryProvider),
   );
 }
+
+@riverpod
+GetMoviesByGenreUsecase getMoviesByGenreUsecase(Ref ref) =>
+    GetMoviesByGenreUsecase(tmdbRepository: ref.read(tmdbRepositoryProvider));
