@@ -21,7 +21,7 @@ class GetMoviesByCategoryCommand extends _$GetMoviesByCategoryCommand {
     state = switch (result) {
       Success(value: final moviesByCategory) => AsyncData(moviesByCategory),
       Failure() => AsyncError(
-        'Erro ao buscar filmes por categoria',
+        'Erro ao buscar títulos por categoria',
         StackTrace.current,
       ),
     };

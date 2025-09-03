@@ -2,11 +2,12 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 
 import '../../../core/result/result.dart';
+import '../../../domain/models/genre.dart';
 import '../../../domain/models/movie.dart';
 import '../../exceptions/data_exception.dart';
 import '../../mappers/movie_mapper.dart';
 import '../../services/tmdb/tmdb_service.dart';
-import './tmdb_repository.dart';
+import 'tmdb_repository.dart';
 
 class TmdbRepositoryImpl implements TmdbRepository {
   final TmdbService _tmdbService;
@@ -103,6 +104,20 @@ class TmdbRepositoryImpl implements TmdbRepository {
       return Failure(
         DataException(message: 'Erro ao buscar os filmes populares'),
       );
+    }
+  }
+
+  @override
+  Future<Result<List<Genre>>> getGenres() async {
+    try {
+      final data = await _tmdbService.getMoviesGenres();
+      final genres = data.genres
+          .map((g) => Genre(id: g.id, name: g.name))
+          .toList();
+      return Success(genres);
+    } on DioException catch (e, s) {
+      log('Erro ao buscar generos', error: e, stackTrace: s);
+      return Failure(DataException(message: 'Erro ao buscar generos'));
     }
   }
 }

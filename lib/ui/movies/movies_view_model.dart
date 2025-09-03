@@ -1,3 +1,4 @@
+
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import 'commands/get_movies_by_category_command.dart';

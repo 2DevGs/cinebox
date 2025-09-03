@@ -46,7 +46,7 @@ final class GetMoviesByCategoryCommandProvider
 }
 
 String _$getMoviesByCategoryCommandHash() =>
-    r'167e90f95df061c9c70104c0a5fcabf6f3491792';
+    r'd64f0010b19b84e511bbcff04727ebb3877edb9c';
 
 abstract class _$GetMoviesByCategoryCommand
     extends $Notifier<AsyncValue<MoviesByCategory?>> {

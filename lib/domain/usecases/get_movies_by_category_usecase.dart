@@ -1,6 +1,6 @@
 
-import '../../core/result/result.dart';
-import '../../data/repositories/tmdb/tmdb_repository.dart';
+import '../../../core/result/result.dart';
+import '../../../data/repositories/tmdb/tmdb_repository.dart';
 import '../models/movie.dart';
 import '../models/movies_by_category.dart';
 

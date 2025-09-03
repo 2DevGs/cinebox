@@ -39,18 +39,18 @@ class MoviesByCategory extends ConsumerWidget {
                 title: 'Mais Populares',
                 movies: data.popular,
               ),
-              // MoviesBox(
-              //   title: 'Mais Avaliados',
-              //   movies: data.topRated,
-              // ),
-              // MoviesBox(
-              //   title: 'Em Cartaz',
-              //   movies: data.nowPlaying,
-              // ),
-              // MoviesBox(
-              //   title: 'Em Breve',
-              //   movies: data.upComing,
-              // ),
+              MoviesBox(
+                title: 'Mais Avaliados',
+                movies: data.topRated,
+              ),
+              MoviesBox(
+                title: 'Em Cartaz',
+                movies: data.nowPlaying,
+              ),
+              MoviesBox(
+                title: 'Em Breve',
+                movies: data.upComing,
+              ),
             ],
           ),
         );

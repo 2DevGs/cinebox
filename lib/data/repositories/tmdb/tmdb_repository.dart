@@ -1,4 +1,5 @@
 import '../../../core/result/result.dart';
+import '../../../domain/models/genre.dart';
 import '../../../domain/models/movie.dart';
 
 abstract interface class TmdbRepository {
@@ -22,5 +23,7 @@ abstract interface class TmdbRepository {
     String language,
     int page,
   });
+
+  Future<Result<List<Genre>>> getGenres();
 
 }
