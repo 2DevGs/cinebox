@@ -1,9 +1,9 @@
-import 'package:cinebox/ui/movies/movies_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/themes/colors.dart';
 import '../commands/get_genres_command.dart';
+import '../movies_view_model.dart';
 
 class GenresBox extends ConsumerStatefulWidget {
 

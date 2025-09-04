@@ -1,5 +1,5 @@
-
 import 'package:cinebox/ui/movies/commands/get_movies_by_genre_command.dart';
+import 'package:cinebox/ui/movies/commands/search_movies_by_name_command.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import 'commands/get_movies_by_category_command.dart';
@@ -26,5 +26,10 @@ class MoviesViewModel extends _$MoviesViewModel {
   Future<void> fetchMoviesByGenre(int genreId) async {
     await changeView(MoviesViewEnum.byGenre);
     ref.read(getMoviesByGenreCommandProvider.notifier).execute(genreId);
+  }
+
+  void fetchMoviesBySearch(String query) async {
+    await changeView(MoviesViewEnum.bySearch);
+    ref.read(searchMoviesByNameCommandProvider.notifier).execute(query);
   }
 }

@@ -135,4 +135,17 @@ class TmdbRepositoryImpl implements TmdbRepository {
       );
     }
   }
+
+  @override
+  Future<Result<List<Movie>>> searshMovies({required String query}) async {
+    try {
+      final data = await _tmdbService.searchMovies(query: query);
+      return Success(MovieMapper.mapToMovies(data));
+    } on DioException catch (e, s) {
+      log('Erro ao encontrar este título, tente novamente!', error: e, stackTrace: s);
+      return Failure(
+        DataException(message: 'Erro ao encontrar este título, tente novamente!'),
+      );
+    }
+  }
 }
