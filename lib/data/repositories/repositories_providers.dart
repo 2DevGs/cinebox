@@ -3,6 +3,8 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../services/services_providers.dart';
 import 'auth/auth_repository.dart';
 import 'auth/auth_repository_impl.dart';
+import 'movies/movies_repository.dart';
+import 'movies/movies_repository_impl.dart';
 import 'tmdb/tmdb_repository.dart';
 import 'tmdb/tmdb_repository_impl.dart';
 
@@ -21,3 +23,7 @@ AuthRepository authRepository(Ref ref) {
 TmdbRepository tmdbRepository(Ref ref) {
   return TmdbRepositoryImpl(tmdbService: ref.read(tmdbServiceProvider));
 }
+
+@riverpod
+MoviesRepository moviesRepository(Ref ref) =>
+    MoviesRepositoryImpl(moviesService: ref.read(moviesServiceProvider));
