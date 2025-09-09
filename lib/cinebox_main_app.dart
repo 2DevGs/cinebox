@@ -1,9 +1,11 @@
-import 'package:cinebox/ui/home/home_screen.dart';
-import 'package:cinebox/ui/login/login_screen.dart';
-import 'package:cinebox/ui/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'ui/core/themes/theme.dart';
+import 'ui/home/home_screen.dart';
+import 'ui/login/login_screen.dart';
+import 'ui/splash/splash_screen.dart';
+
+final navKey = GlobalKey<NavigatorState>();
 
 class CineboxMainApp extends StatelessWidget {
   const CineboxMainApp({super.key});
@@ -13,6 +15,7 @@ class CineboxMainApp extends StatelessWidget {
     return MaterialApp(
       title: 'CineBox',
       theme: AppTheme.theme,
+      navigatorKey: navKey,
       routes: {
         '/': (_) => SplashScreen(),
         '/login': (_) => LoginScreen(),

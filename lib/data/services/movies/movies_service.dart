@@ -1,6 +1,7 @@
-import 'package:cinebox/data/models/favorite_movie_response.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
+
+import '../../models/favorite_movie_response.dart';
 
 part 'movies_service.g.dart';
 

@@ -1,12 +1,10 @@
 import 'dart:developer';
-
-import 'package:cinebox/core/result/result.dart';
-import 'package:cinebox/data/exceptions/data_exception.dart';
-import 'package:cinebox/data/services/movies/movies_service.dart';
-
-import 'package:cinebox/domain/models/favorite_movie.dart';
 import 'package:dio/dio.dart';
 
+import '../../../core/result/result.dart';
+import '../../../domain/models/favorite_movie.dart';
+import '../../exceptions/data_exception.dart';
+import '../../services/movies/movies_service.dart';
 import './movies_repository.dart';
 
 class MoviesRepositoryImpl implements MoviesRepository {
