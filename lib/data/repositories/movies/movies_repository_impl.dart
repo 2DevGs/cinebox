@@ -1,10 +1,10 @@
 import 'dart:developer';
-import 'package:cinebox/data/models/save_favorite_movie.dart';
 import 'package:dio/dio.dart';
 
 import '../../../core/result/result.dart';
 import '../../../domain/models/favorite_movie.dart';
 import '../../exceptions/data_exception.dart';
+import '../../models/save_favorite_movie.dart';
 import '../../services/movies/movies_service.dart';
 import './movies_repository.dart';
 
@@ -21,7 +21,7 @@ class MoviesRepositoryImpl implements MoviesRepository {
       final favorites = response
           .map(
             (f) => FavoriteMovie(
-              id: f.moieId,
+              id: f.movieId,
               title: f.title,
               posterPath: f.posterUrl,
               year: f.year,
@@ -54,7 +54,7 @@ class MoviesRepositoryImpl implements MoviesRepository {
       await _moviesService.saveFavoriteMovie(
         SaveFavoriteMovie(
           movieId: favoriteMovie.id,
-          postUrl: favoriteMovie.posterPath,
+          posterUrl: favoriteMovie.posterPath,
           title: favoriteMovie.title,
           year: favoriteMovie.year,
         ),
