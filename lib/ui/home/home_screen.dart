@@ -1,7 +1,9 @@
-import 'package:cinebox/ui/home/widgets/home_bottom_nav_bar.dart';
-import 'package:cinebox/ui/movies/movies_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../favorites/favorites_screen.dart';
+import '../movies/movies_screen.dart';
+import 'widgets/home_bottom_nav_bar.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
@@ -11,6 +13,9 @@ class HomeScreen extends ConsumerStatefulWidget {
 }
 
 class _HomeScreenState extends ConsumerState<HomeScreen> {
+
+  int _currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,11 +26,20 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           opacity: animation,
           child: child,
         ),
-        child: MoviesScreen(
-          
-        ),
+        child: switch(_currentIndex) {
+          0 => MoviesScreen(key:  ValueKey(0),),
+          1 => FavoritesScreen(key:  ValueKey(1),),
+          _ => MoviesScreen(key:  ValueKey(0),),
+        },
       ),
-      bottomNavigationBar: HomeBottomNavBar(),
+      bottomNavigationBar: HomeBottomNavBar(
+        currentIndex: _currentIndex,
+        onTap: (value) {
+          setState(() {
+            _currentIndex = value;
+          });
+        },
+      ),
     );
   }
 }
