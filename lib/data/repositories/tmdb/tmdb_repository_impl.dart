@@ -1,4 +1,6 @@
 import 'dart:developer';
+import 'package:cinebox/domain/models/cast.dart';
+import 'package:cinebox/domain/models/movie_detail.dart';
 import 'package:dio/dio.dart';
 
 import '../../../core/result/result.dart';
@@ -142,10 +144,38 @@ class TmdbRepositoryImpl implements TmdbRepository {
       final data = await _tmdbService.searchMovies(query: query);
       return Success(MovieMapper.mapToMovies(data));
     } on DioException catch (e, s) {
-      log('Erro ao encontrar este título, tente novamente!', error: e, stackTrace: s);
+      log(
+        'Erro ao encontrar este título, tente novamente!',
+        error: e,
+        stackTrace: s,
+      );
       return Failure(
-        DataException(message: 'Erro ao encontrar este título, tente novamente!'),
+        DataException(
+          message: 'Erro ao encontrar este título, tente novamente!',
+        ),
       );
     }
+  }
+
+  @override
+  Future<Result<MovieDetail>> getMovieDetails(int movieId) async {
+    final response = await _tmdbService.getMovieDetails(
+      movieId,
+      appendToResponse: 'credits,videos,recomendations,release_dates,images',
+    );
+
+    final movieDetail = MovieDetail(
+      title: response.title,
+      overview: response.overview,
+      releaseDate: response.releaseDate,
+      runtime: response.runtime,
+      voteAverage: response.voteAverage,
+      voteCount: response.voteCount,
+      images: response.images.backdrops.map((i) => 'https://image.tmdb.org/t/p/w342/${i.filePath}').toList(),
+      cast: response.credits.cast.map((c) => Cast(name: c.name, character: c.character, profilePath: c.profilePath)).toList(),
+      genres: response.genres.map((g) => Genre(id: g.id, name: g.name)).toList(),
+      videos: response.videos.results.map((v) => v.key).toList(),
+    );
+    return Success(movieDetail);
   }
 }
