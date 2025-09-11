@@ -56,7 +56,7 @@ final class MovieCardViewModelProvider
 }
 
 String _$movieCardViewModelHash() =>
-    r'5ac94266404a167df8c3fa0cbe41a3d94cae53c8';
+    r'1c79ec229f56c3948baff09c406af9b56f127dde';
 
 final class MovieCardViewModelFamily extends $Family
     with
@@ -70,8 +70,8 @@ final class MovieCardViewModelFamily extends $Family
         isAutoDispose: true,
       );
 
-  MovieCardViewModelProvider call(Key key, int movideId) =>
-      MovieCardViewModelProvider._(argument: (key, movideId), from: this);
+  MovieCardViewModelProvider call(Key key, int movieId) =>
+      MovieCardViewModelProvider._(argument: (key, movieId), from: this);
 
   @override
   String toString() => r'movieCardViewModelProvider';
@@ -80,9 +80,9 @@ final class MovieCardViewModelFamily extends $Family
 abstract class _$MovieCardViewModel extends $Notifier<void> {
   late final _$args = ref.$arg as (Key, int);
   Key get key => _$args.$1;
-  int get movideId => _$args.$2;
+  int get movieId => _$args.$2;
 
-  void build(Key key, int movideId);
+  void build(Key key, int movieId);
   @$mustCallSuper
   @override
   void runBuild() {

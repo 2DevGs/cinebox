@@ -15,7 +15,6 @@ class MoviesViewModel extends _$MoviesViewModel {
 
   Future<void> changeView(MoviesViewEnum view) async {
     state = view;
-    await Future.delayed(Duration(milliseconds: 200));
   }
 
   Future<void> fetchMoviesByCategory() async {
