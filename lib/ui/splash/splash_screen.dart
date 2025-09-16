@@ -1,10 +1,10 @@
-import 'package:cinebox/ui/core/widgets/loader_messages.dart';
-import 'package:cinebox/ui/splash/commands/check_user_logged_command.dart';
-import 'package:cinebox/ui/splash/splash_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../core/themes/resource.dart';
+import '../core/widgets/loader_messages.dart';
+import 'commands/check_user_logged_command.dart';
+import 'splash_view_model.dart';
 
 class SplashScreen extends ConsumerStatefulWidget {
   const SplashScreen({super.key});

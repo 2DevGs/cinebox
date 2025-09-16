@@ -1,10 +1,11 @@
-import 'package:cinebox/ui/core/themes/resource.dart';
-import 'package:cinebox/ui/core/widgets/loader_messages.dart';
-import 'package:cinebox/ui/login/commands/login_with_google_command.dart';
-import 'package:cinebox/ui/login/login_view_model.dart';
-import 'package:cinebox/ui/login/widgets/sign_in_google_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../core/themes/resource.dart';
+import '../core/widgets/loader_messages.dart';
+import 'commands/login_with_google_command.dart';
+import 'login_view_model.dart';
+import 'widgets/sign_in_google_button.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});

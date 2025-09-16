@@ -1,5 +1,6 @@
-import 'package:cinebox/ui/login/commands/login_with_google_command.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+import 'commands/login_with_google_command.dart';
 
 part 'login_view_model.g.dart';
 

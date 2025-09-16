@@ -14,9 +14,9 @@ class SplashViewModel {
   }
 }
 
-  @riverpod
-  SplashViewModel splashViewModel(Ref ref) {
-    return SplashViewModel(
-      checkUserLoggedCommand: ref.read(checkUserLoggedCommandProvider.notifier),
-    );
-  }
+@riverpod
+SplashViewModel splashViewModel(Ref ref) {
+  return SplashViewModel(
+    checkUserLoggedCommand: ref.read(checkUserLoggedCommandProvider.notifier),
+  );
+}

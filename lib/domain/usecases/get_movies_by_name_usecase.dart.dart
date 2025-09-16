@@ -21,7 +21,7 @@ class GetMoviesByNameUsecase {
   }) async {
     final results = await Future.wait([
       _moviesRepository.getMyFavoritesMovies(),
-      _tmdbRepository.searshMovies(query: name),
+      _tmdbRepository.searchMovies(query: name),
     ]);
 
     if (results case [

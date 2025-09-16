@@ -1,9 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cinebox/ui/core/themes/text_styles.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/themes/colors.dart';
 import '../../core/themes/resource.dart';
+import '../../core/themes/text_styles.dart';
 
 class ActorCard extends StatelessWidget {
   final String imageUrl;

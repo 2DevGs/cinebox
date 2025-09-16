@@ -1,7 +1,8 @@
-import 'package:cinebox/ui/core/themes/colors.dart';
-import 'package:cinebox/ui/core/themes/resource.dart';
-import 'package:cinebox/ui/home/widgets/home_bottom_nav_bar_item.dart';
 import 'package:flutter/material.dart';
+
+import '../../core/themes/colors.dart';
+import '../../core/themes/resource.dart';
+import 'home_bottom_nav_bar_item.dart';
 
 class HomeBottomNavBar extends StatefulWidget {
   final int currentIndex;

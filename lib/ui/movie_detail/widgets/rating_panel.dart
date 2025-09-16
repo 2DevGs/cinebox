@@ -1,9 +1,10 @@
-import 'package:cinebox/ui/core/themes/text_styles.dart';
 import 'package:flutter/material.dart';
+
+import '../../core/themes/text_styles.dart';
 
 class RatingPanel extends StatelessWidget {
   final double voteAverage;
-  final double voteCount;
+  final int voteCount;
 
   const RatingPanel({
     super.key,

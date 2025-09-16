@@ -1,11 +1,11 @@
 import 'dart:developer';
-import 'package:cinebox/domain/models/cast.dart';
-import 'package:cinebox/domain/models/movie_detail.dart';
 import 'package:dio/dio.dart';
 
 import '../../../core/result/result.dart';
+import '../../../domain/models/cast.dart';
 import '../../../domain/models/genre.dart';
 import '../../../domain/models/movie.dart';
+import '../../../domain/models/movie_detail.dart';
 import '../../exceptions/data_exception.dart';
 import '../../mappers/movie_mapper.dart';
 import '../../services/tmdb/tmdb_service.dart';
@@ -139,7 +139,7 @@ class TmdbRepositoryImpl implements TmdbRepository {
   }
 
   @override
-  Future<Result<List<Movie>>> searshMovies({required String query}) async {
+  Future<Result<List<Movie>>> searchMovies({required String query}) async {
     try {
       final data = await _tmdbService.searchMovies(query: query);
       return Success(MovieMapper.mapToMovies(data));
@@ -171,9 +171,21 @@ class TmdbRepositoryImpl implements TmdbRepository {
       runtime: response.runtime,
       voteAverage: response.voteAverage,
       voteCount: response.voteCount,
-      images: response.images.backdrops.map((i) => 'https://image.tmdb.org/t/p/w342/${i.filePath}').toList(),
-      cast: response.credits.cast.map((c) => Cast(name: c.name, character: c.character, profilePath: c.profilePath)).toList(),
-      genres: response.genres.map((g) => Genre(id: g.id, name: g.name)).toList(),
+      images: response.images.backdrops
+          .map((i) => 'https://image.tmdb.org/t/p/w342/${i.filePath}')
+          .toList(),
+      cast: response.credits.cast
+          .map(
+            (c) => Cast(
+              name: c.name,
+              character: c.character,
+              profilePath: c.profilePath,
+            ),
+          )
+          .toList(),
+      genres: response.genres
+          .map((g) => Genre(id: g.id, name: g.name))
+          .toList(),
       videos: response.videos.results.map((v) => v.key).toList(),
     );
     return Success(movieDetail);

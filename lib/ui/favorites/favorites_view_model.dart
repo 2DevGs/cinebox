@@ -1,7 +1,7 @@
-import 'package:cinebox/data/repositories/movies/movies_repository.dart';
-import 'package:cinebox/data/repositories/repositories_providers.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import '../../data/repositories/movies/movies_repository.dart';
+import '../../data/repositories/repositories_providers.dart';
 import 'commands/get_favorites_command.dart';
 
 part 'favorites_view_model.g.dart';

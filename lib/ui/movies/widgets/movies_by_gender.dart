@@ -1,7 +1,8 @@
-import 'package:cinebox/ui/movies/commands/get_movies_by_genre_command.dart';
-import 'package:cinebox/ui/movies/widgets/movies_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../commands/get_movies_by_genre_command.dart';
+import 'movies_box.dart';
 
 class MoviesByGender extends ConsumerWidget {
   const MoviesByGender({super.key});
