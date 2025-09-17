@@ -1,9 +1,9 @@
-import 'package:cinebox/ui/movie_detail/movie_detail_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'ui/core/themes/theme.dart';
 import 'ui/home/home_screen.dart';
 import 'ui/login/login_screen.dart';
+import 'ui/movie_detail/movie_detail_screen.dart';
 import 'ui/splash/splash_screen.dart';
 
 final navKey = GlobalKey<NavigatorState>();

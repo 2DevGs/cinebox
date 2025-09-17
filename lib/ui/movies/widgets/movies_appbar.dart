@@ -1,10 +1,10 @@
 import 'dart:async';
-
-import 'package:cinebox/ui/core/themes/colors.dart';
-import 'package:cinebox/ui/core/themes/resource.dart';
-import 'package:cinebox/ui/movies/movies_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../../core/themes/colors.dart';
+import '../../core/themes/resource.dart';
+import '../movies_view_model.dart';
 
 class MoviesAppbar extends ConsumerStatefulWidget {
   const MoviesAppbar({super.key});

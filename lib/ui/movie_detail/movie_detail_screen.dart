@@ -1,13 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cinebox/ui/core/widgets/loader_messages.dart';
-import 'package:cinebox/ui/movie_detail/commands/get_movie_details_command.dart';
-import 'package:cinebox/ui/movie_detail/movie_detail_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../core/themes/colors.dart';
 import '../core/themes/text_styles.dart';
+import '../core/widgets/loader_messages.dart';
+import 'commands/get_movie_details_command.dart';
+import 'movie_detail_view_model.dart';
 import 'widgets/cast_box.dart';
 import 'widgets/movie_trailer.dart';
 import 'widgets/rating_panel.dart';
@@ -49,11 +49,11 @@ class _MovieDetailScreenState extends ConsumerState<MovieDetailScreen>
           child: Text('Erro ao carregar detalhes deste título'),
         ),
         data: (data) {
-          if (data == null) {
-            return Center(
-              child: Text('Título não encontrado'),
-            );
-          }
+          // if (data == null) {
+          //   return Center(
+          //     child: Text('Título não encontrado'),
+          //   );
+          // }
           final hoursRuntime = data.runtime ~/ 60;
           final minutesRuntime = data.runtime % 60;
           return SingleChildScrollView(

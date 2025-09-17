@@ -1,8 +1,8 @@
-import 'package:cinebox/ui/movies/commands/get_movies_by_genre_command.dart';
-import 'package:cinebox/ui/movies/commands/search_movies_by_name_command.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import 'commands/get_movies_by_category_command.dart';
+import 'commands/get_movies_by_genre_command.dart';
+import 'commands/search_movies_by_name_command.dart';
 
 part 'movies_view_model.g.dart';
 

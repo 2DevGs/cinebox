@@ -1,7 +1,8 @@
-import 'package:cinebox/ui/core/themes/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
+
+import '../themes/colors.dart';
 
 mixin LoaderAndMessage<T extends ConsumerStatefulWidget> on ConsumerState<T> {
   var isOpen = false;

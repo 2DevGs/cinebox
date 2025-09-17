@@ -1,8 +1,8 @@
-import 'package:cinebox/data/models/save_favorite_movie.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../../models/favorite_movie_response.dart';
+import '../../models/save_favorite_movie.dart';
 
 part 'movies_service.g.dart';
 
@@ -19,5 +19,7 @@ abstract class MoviesService {
   );
 
   @POST('/favorite')
-  Future<void> saveFavoriteMovie(@Body() SaveFavoriteMovie request);
+  Future<void> saveFavoriteMovie(
+    @Body() SaveFavoriteMovie request,
+  );
 }

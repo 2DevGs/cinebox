@@ -1,10 +1,10 @@
-import 'package:cinebox/ui/core/widgets/loader_messages.dart';
 import 'package:cinebox/ui/core/widgets/movie_card.dart';
-import 'package:cinebox/ui/favorites/commands/get_favorites_command.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../domain/models/favorite_movie.dart';
+import '../core/widgets/loader_messages.dart';
+import 'commands/get_favorites_command.dart';
 import 'favorites_view_model.dart';
 
 class FavoritesScreen extends ConsumerStatefulWidget {

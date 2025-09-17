@@ -1,7 +1,8 @@
-import 'package:cinebox/ui/movies/commands/search_movies_by_name_command.dart';
-import 'package:cinebox/ui/movies/widgets/movies_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../commands/search_movies_by_name_command.dart';
+import 'movies_box.dart';
 
 class MoviesBySearch extends ConsumerStatefulWidget {
   const MoviesBySearch({super.key});

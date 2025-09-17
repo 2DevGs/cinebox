@@ -1,13 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cinebox/ui/core/commands/favorite_movie_command.dart';
-import 'package:cinebox/ui/core/commands/remove_favorite_movie_command.dart';
-import 'package:cinebox/ui/core/commands/save_favorite_movie_command.dart';
-import 'package:cinebox/ui/core/widgets/loader_messages.dart';
-import 'package:cinebox/ui/core/widgets/movie_card_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../commands/favorite_movie_command.dart';
+import '../commands/remove_favorite_movie_command.dart';
+import '../commands/save_favorite_movie_command.dart';
 import '../themes/colors.dart';
+import 'loader_messages.dart';
+import 'movie_card_view_model.dart';
 
 class MovieCard extends ConsumerStatefulWidget {
   final int id;

@@ -1,5 +1,6 @@
-import 'package:cinebox/ui/splash/commands/check_user_logged_command.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+import 'commands/check_user_logged_command.dart';
 
 part 'splash_view_model.g.dart';
 

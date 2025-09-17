@@ -1,11 +1,11 @@
 import 'dart:developer';
-import 'package:cinebox/core/result/result.dart';
-import 'package:cinebox/data/exceptions/data_exception.dart';
-import 'package:cinebox/data/services/auth/auth_service.dart';
-import 'package:cinebox/data/services/google_signin/google_signin_service.dart';
-import 'package:cinebox/data/services/local_storage/local_storage_service.dart';
 import 'package:dio/dio.dart';
 
+import '../../../core/result/result.dart';
+import '../../exceptions/data_exception.dart';
+import '../../services/auth/auth_service.dart';
+import '../../services/google_signin/google_signin_service.dart';
+import '../../services/local_storage/local_storage_service.dart';
 import './auth_repository.dart';
 
 class AuthRepositoryImpl implements AuthRepository {

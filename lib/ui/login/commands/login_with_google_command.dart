@@ -1,6 +1,7 @@
-import 'package:cinebox/core/result/result.dart';
-import 'package:cinebox/data/repositories/repositories_providers.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+import '../../../core/result/result.dart';
+import '../../../data/repositories/repositories_providers.dart';
 
 part 'login_with_google_command.g.dart';
 

@@ -1,4 +1,4 @@
-import 'package:cinebox/core/result/result.dart';
+import '../../../core/result/result.dart';
 
 abstract interface class GoogleSigninService {
   Future<Result<String>> signIn();

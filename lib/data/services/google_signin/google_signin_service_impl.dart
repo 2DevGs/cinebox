@@ -1,8 +1,7 @@
 import 'dart:developer';
-
-import 'package:cinebox/core/result/result.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
+import '../../../core/result/result.dart';
 import './google_signin_service.dart';
 
 class GoogleSigninServiceImpl implements GoogleSigninService {
